@@ -450,7 +450,7 @@ Program POTRAFI liczyć wyrażenia zagnieżdżone typu sin(cos(30)+tg(sqrt(0,4))
     <value>_Interpolacja i aproksymacja</value>
   </data>
   <data name="menuStrip_languageToolStripMenuItem" xml:space="preserve">
-    <value>_Język</value>
+    <value>_Language</value>
   </data>
   <data name="menuStrip_linearEquationToolStripMenuItem" xml:space="preserve">
     <value>_Równania liniowe</value>
