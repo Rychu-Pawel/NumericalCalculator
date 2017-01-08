@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>        
         <WrapPanel>
             <Label Content="{Binding Source={StaticResource Language}, Path=LinearEquationForm_lblNumberOfVariables}"></Label>
-            <TextBox Name="txtNumberOfVariables" Text="{Binding VariablesCount}" Width="35"></TextBox>
+            <TextBox Name="txtNumberOfVariables" Text="{Binding VariablesCount, UpdateSourceTrigger=PropertyChanged}" Width="35"></TextBox>
         </WrapPanel>
         <DataGrid Name="dgEquations" Grid.Row="1" Margin="0,10,0,0" AutoGenerateColumns="False">
         </DataGrid>

@@ -13,8 +13,8 @@
         </Grid.RowDefinitions>
         <DataGrid Name="dgInterpolation" Grid.Row="0" AutoGenerateColumns="False" CanUserDeleteRows="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=X}"  Header="x" Width="*" />
-                <DataGridTextColumn Binding="{Binding Path=Y}"  Header="f(x)" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=X, UpdateSourceTrigger=PropertyChanged}"  Header="x" Width="*" />
+                <DataGridTextColumn Binding="{Binding Path=Y, UpdateSourceTrigger=PropertyChanged}"  Header="f(x)" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <GroupBox Grid.Row="1" Header="{Binding Source={StaticResource Language}, Path=InterpolationForm_gbInterpolation}" Margin="0,10,0,0">
@@ -29,7 +29,7 @@
                 <RadioButton Content="{Binding Source={StaticResource Language}, Path=InterpolationForm_rbApproximation}" Name="rbApproximation" HorizontalAlignment="Right" VerticalAlignment="Center" GroupName="RBGroup" Margin="0,0,5,0" IsChecked="{Binding Approximation.Bool}"></RadioButton>
                 <WrapPanel Grid.Column="1" Margin="5,0,0,0">
                     <Label Content="{Binding Source={StaticResource Language}, Path=InterpolationForm_lblApproximationLevel}"></Label>
-                    <TextBox Text="{Binding Level.Text}" Name="txtLevel" Width="30" VerticalAlignment="Center"></TextBox>
+                    <TextBox Text="{Binding Level.Text, UpdateSourceTrigger=PropertyChanged}" Name="txtLevel" Width="30" VerticalAlignment="Center"></TextBox>
                 </WrapPanel>                
             </Grid>
         </GroupBox>

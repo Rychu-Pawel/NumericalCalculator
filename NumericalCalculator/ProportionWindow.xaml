@@ -16,10 +16,10 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label Content="{Binding Source={StaticResource Language}, Path=ProportionsForm_lblDescription}" Grid.ColumnSpan="2"></Label>
-                <TextBox Name="txtFirstValue" Grid.Row="1" Margin="0,5,2.5,0" Text="{Binding First.Text}"></TextBox>
-                <TextBox Name="txtSecondValue" Grid.Row="1" Grid.Column="1" Margin="2.5,5,0,0" Text="{Binding Second.Text}"></TextBox>
-                <TextBox Name="txtThirdValue" Grid.Row="2" Margin="0,5,2.5,0" Text="{Binding Third.Text}"></TextBox>
-                <TextBox Name="txtFourthValue" Grid.Row="2" Grid.Column="2" Margin="2.5,5,0,0" Text="{Binding Fourth.Text}"></TextBox>
+                <TextBox Name="txtFirstValue" Grid.Row="1" Margin="0,5,2.5,0" Text="{Binding First.Text, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Name="txtSecondValue" Grid.Row="1" Grid.Column="1" Margin="2.5,5,0,0" Text="{Binding Second.Text, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Name="txtThirdValue" Grid.Row="2" Margin="0,5,2.5,0" Text="{Binding Third.Text, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Name="txtFourthValue" Grid.Row="2" Grid.Column="2" Margin="2.5,5,0,0" Text="{Binding Fourth.Text, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             </Grid>
         </GroupBox>
         <GroupBox Header="{Binding Source={StaticResource Language}, Path=ProportionsForm_gbResult}" Margin="0,5,0,0">

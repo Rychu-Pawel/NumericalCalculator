@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NumericalCalculator.Logic;
 using NumericalCalculator.Translations;
+using Rychusoft.NumericalLibraries.Calculator;
 
 namespace NumericalCalculator
 {
@@ -28,6 +29,8 @@ namespace NumericalCalculator
 
             //Ustawienie bindingu
             pnlProportion.DataContext = logic;
+
+            txtFirstValue.Focus();
         }
 
         private void btnCompute_Click(object sender, RoutedEventArgs e)

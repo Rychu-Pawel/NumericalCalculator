@@ -40,6 +40,50 @@
     <ApplicationIcon>calc.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Rychusoft.NumericalLibraries.Bessel, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Bessel.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Bessel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Calculator, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Calculator.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Calculator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Chart, Version=1.0.6217.36660, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Chart.1.0.6217.36660\lib\net40\Rychusoft.NumericalLibraries.Chart.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Derivative, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Derivative.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Derivative.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Differential, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Differential.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Differential.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.FourierTransform, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.FourierTransform.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.FourierTransform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Hybrid, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Hybrid.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Hybrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Integral, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Integral.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Integral.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Interpolation, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Interpolation.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Interpolation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.LinearEquation, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.LinearEquation.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.LinearEquation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.NumericalLibrariesCommon, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.LinearEquation.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.NumericalLibrariesCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -73,12 +117,26 @@
     <Compile Include="LinearEquationWindow.xaml.cs">
       <DependentUpon>LinearEquationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\CutoffValueException.cs" />
+    <Compile Include="Exceptions\FromConversionException.cs" />
+    <Compile Include="Exceptions\FromIIConversionException.cs" />
+    <Compile Include="Exceptions\FunctionNullReferenceException.cs" />
     <Compile Include="Logic\InterpolationWindowLogic.cs" />
     <Compile Include="Logic\LinearEquationWindowLogic.cs" />
     <Compile Include="Logic\MainWindowLogic.cs" />
     <Compile Include="Logic\MeanWindowLogic.cs" />
     <Compile Include="Logic\Miscellaneous.cs" />
+    <Compile Include="Exceptions\PointConversionException.cs" />
     <Compile Include="Logic\ProportionWindowLogic.cs" />
+    <Compile Include="Exceptions\SamplingValueException.cs" />
+    <Compile Include="Exceptions\ToConversionException.cs" />
+    <Compile Include="Exceptions\ToIIConversionException.cs" />
+    <Compile Include="Exceptions\xFromException.cs" />
+    <Compile Include="Exceptions\XFromIsGreaterThenXToException.cs" />
+    <Compile Include="Exceptions\xToException.cs" />
+    <Compile Include="Exceptions\yFromException.cs" />
+    <Compile Include="Exceptions\YFromIsGreaterThenYToException.cs" />
+    <Compile Include="Exceptions\yToException.cs" />
     <Compile Include="ProportionWindow.xaml.cs">
       <DependentUpon>ProportionWindow.xaml</DependentUpon>
     </Compile>
@@ -168,6 +226,7 @@
       <LastGenOutput>Language.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -179,52 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\unlock.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Bessel\Bessel.csproj">
-      <Project>{B1AE7CE0-9D40-4294-99B3-3DB1C6FD7AAD}</Project>
-      <Name>Bessel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Calculator\Calculator.csproj">
-      <Project>{ABCF2024-B9ED-4BF1-B19F-336BB94CEFB2}</Project>
-      <Name>Calculator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Chart\Chart.csproj">
-      <Project>{54E6D3FA-98D4-46EC-A5A2-6E58A32E1950}</Project>
-      <Name>Chart</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Derivative\Derivative.csproj">
-      <Project>{26084897-09EC-4255-A641-BED2A36FDB99}</Project>
-      <Name>Derivative</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Differential\Differential.csproj">
-      <Project>{160A2F87-45D9-4603-BE1A-A1815F3FC034}</Project>
-      <Name>Differential</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FourierTransform\FourierTransform.csproj">
-      <Project>{45489865-42D0-47B9-B401-E6F2B7B29A90}</Project>
-      <Name>FourierTransform</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hybrid\Hybrid.csproj">
-      <Project>{E042347C-874C-490F-9185-D3F140FE51F0}</Project>
-      <Name>Hybrid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Integral\Integral.csproj">
-      <Project>{7E62C4FF-E2E8-4AA1-B3F1-1A22F12D743C}</Project>
-      <Name>Integral</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Interpolation\Interpolation.csproj">
-      <Project>{AAA136B6-9A62-4BDE-88E0-50A0DC9E2215}</Project>
-      <Name>Interpolation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LinearEquation\LinearEquation.csproj">
-      <Project>{990923CB-10A0-46EC-B76E-ED28B12EDEDC}</Project>
-      <Name>LinearEquation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NumericalCalculatorCommon\NumericalCalculatorCommon.csproj">
-      <Project>{C66448A1-26AF-4603-9109-D430A920C407}</Project>
-      <Name>NumericalCalculatorCommon</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="calc.ico" />

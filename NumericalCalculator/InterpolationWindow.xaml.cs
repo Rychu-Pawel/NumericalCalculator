@@ -12,7 +12,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NumericalCalculator.Logic;
 using NumericalCalculator.Translations;
-using NumericalCalculator.Exceptions;
+using Rychusoft.NumericalLibraries.Interpolation;
+using Rychusoft.NumericalLibraries.Approximation.Exceptions;
+using Rychusoft.NumericalLibraries.Interpolation.Exceptions;
+using Rychusoft.NumericalLibraries.LinearEquation.Exceptions;
+using Rychusoft.NumericalLibraries.Approximation;
 
 namespace NumericalCalculator
 {
@@ -58,8 +62,7 @@ namespace NumericalCalculator
                 if (logic.Interpolation)
                 {
                     // ZMIENNE
-                    Interpolation interpolation = new Interpolation();
-                    interpolation.Points = logic.InterpolationDataList;
+                    Interpolation interpolation = new Interpolation(logic.InterpolationDataList);
                     logic.Result.Text = interpolation.Compute();
                 }
                 //Aproksymacja
@@ -71,10 +74,9 @@ namespace NumericalCalculator
                         throw new WrongApproximationLevelException();
 
                     // ZMIENNE
-                    Approximation approximation = new Approximation(level);
+                    Approximation approximation = new Approximation(logic.InterpolationDataList, level);
 
                     //Aproksymacja
-                    approximation.Points = logic.InterpolationDataList;
                     logic.Result.Text = approximation.Compute();
                 }
             }

@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NumericalCalculator.Logic;
 using NumericalCalculator.Translations;
+using Rychusoft.NumericalLibraries.LinearEquation;
 
 namespace NumericalCalculator
 {

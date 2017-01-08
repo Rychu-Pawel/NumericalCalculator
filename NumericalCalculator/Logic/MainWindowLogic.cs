@@ -6,13 +6,23 @@ using NumericalCalculator.Translations;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows;
-using NumericalCalculator.Exceptions;
 using System.Diagnostics;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.IO;
 using System.Drawing;
 using Microsoft.Win32;
+using Rychusoft.NumericalLibraries.Chart;
+using Rychusoft.NumericalLibraries.Calculator;
+using Rychusoft.NumericalLibraries.Derivative;
+using Rychusoft.NumericalLibraries.FunctionRoot;
+using Rychusoft.NumericalLibraries.Differential;
+using Rychusoft.NumericalLibraries.Integral;
+using Rychusoft.NumericalLibraries.Bessel;
+using Rychusoft.NumericalLibraries.Calculator.Exceptions;
+using Rychusoft.NumericalLibraries.Chart.Exceptions;
+using Rychusoft.NumericalLibraries.Chart.Enums;
+using Rychusoft.NumericalLibraries.Calculator.Enums;
+using NumericalCalculator.Exceptions;
 
 namespace NumericalCalculator.Logic
 {
@@ -603,18 +613,18 @@ namespace NumericalCalculator.Logic
                 }
                 else if (window.rbPoint.IsChecked.GetValueOrDefault(false))
                 {
-                    Derivative derivative = new Derivative(function, point);
-                    Result.Text = derivative.ComputeFunctionAtPoint().ToString();
+                    Derivative derivative = new Derivative(function);
+                    Result.Text = derivative.ComputeFunctionValueAtPoint(point).ToString();
                 }
                 else if (window.rbDerivativePoint.IsChecked.GetValueOrDefault(false))
                 {
-                    Derivative derivative = new Derivative(function, point);
-                    Result.Text = derivative.ComputeDerivative().ToString();
+                    Derivative derivative = new Derivative(function);
+                    Result.Text = derivative.ComputeDerivative(point).ToString();
                 }
                 else if (window.rbDerivativePointBis.IsChecked.GetValueOrDefault(false))
                 {
-                    Derivative derivativeBis = new Derivative(function, point);
-                    Result.Text = derivativeBis.ComputeDerivativeBis().ToString();
+                    Derivative derivativeBis = new Derivative(function);
+                    Result.Text = derivativeBis.ComputeDerivativeBis(point).ToString();
                 }
                 else if (window.rbRoot.IsChecked.GetValueOrDefault(false))
                 {
@@ -912,9 +922,9 @@ namespace NumericalCalculator.Logic
 
                     //Obliczenie maxów i minów do reskalingu
                     if (window.chkSpecialFunction.IsChecked.GetValueOrDefault(false) && window.chkSpecialFunction.IsEnabled)
-                        reskalling = chart.Reskalling(bft, first, second, thrid, fourth); //bessele
+                        reskalling = chart.Rescalling(bft, first, second, thrid, fourth); //bessele
                     else
-                        reskalling = chart.Reskalling(functionType.ToArray()); //normlanych
+                        reskalling = chart.Rescalling(functionType.ToArray()); //normlanych
 
                     xFrom = reskalling[0];
                     xTo = reskalling[1];
