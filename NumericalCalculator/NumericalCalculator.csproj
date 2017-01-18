@@ -72,8 +72,8 @@
       <HintPath>..\packages\Rychusoft.NumericalLibraries.Integral.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Integral.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Rychusoft.NumericalLibraries.Interpolation, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Rychusoft.NumericalLibraries.Interpolation.1.0.6217.35254\lib\net40\Rychusoft.NumericalLibraries.Interpolation.dll</HintPath>
+    <Reference Include="Rychusoft.NumericalLibraries.Interpolation, Version=1.0.6227.35728, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Interpolation.1.0.6227.35728\lib\net40\Rychusoft.NumericalLibraries.Interpolation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rychusoft.NumericalLibraries.LinearEquation, Version=1.0.6217.35254, Culture=neutral, processorArchitecture=MSIL">
